@@ -1,50 +1,64 @@
-# This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# https://www.youtube.com/watch?v=yRz8D_oJMWQ
+# GitHub Actions Workflow: Node.js CI
+# This workflow installs dependencies, caches them, builds the code, exports the project, and deploys it to GitHub Pages.
+# See: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: macos-latest
-
-    # env:
-      # Repository name
-      # https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a/
-      # BASE_PATH: /${{ github.event.repository.name }}
 
     strategy:
       matrix:
-        node-version: [14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        node-version: [14.x, 16.x, 18.x] # Test against multiple Node.js versions
+        # Refer to https://nodejs.org/en/about/releases/ for supported versions
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set Environment Variables
-      run: echo "BASE_PATH=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
-    - name: Test Environment Variables
-      run: echo ${{ env.BASE_PATH }}
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+    # Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # Set environment variables
+    - name: Set environment variables
+      run: echo "BASE_PATH=/${{ github.event.repository.name }}" >> $GITHUB_ENV
+
+    # Test environment variables (for debugging, can be removed later)
+    - name: Display environment variables
+      run: echo "BASE_PATH: ${{ env.BASE_PATH }}"
+
+    # Setup Node.js and cache dependencies
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    # - run: npm run prebuild # build automatically runs prebuild
-    - run: npm run build
-    - run: npm run export
-    - run: touch ./out/.nojekyll
-    
-    # https://github.com/marketplace/actions/deploy-to-github-pages
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+
+    # Install dependencies
+    - name: Install dependencies
+      run: npm ci
+
+    # Build the project
+    - name: Build the project
+      run: npm run build
+
+    # Export the project (for static deployments)
+    - name: Export the project
+      run: npm run export
+
+    # Prevent GitHub Pages from processing the output folder as Jekyll
+    - name: Disable Jekyll on GitHub Pages
+      run: touch ./out/.nojekyll
+
+    # Deploy the build to GitHub Pages
+    - name: Deploy to GitHub Pages 🚀
+      uses: JamesIves/github-pages-deploy-action@v4.1.4
       with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: out # The folder the action should deploy.
+        branch: gh-pages # Deployment branch
+        folder: out      # Deployment folder
+
