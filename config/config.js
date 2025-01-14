@@ -1,10 +1,26 @@
 
-import profile from './profile.png';
+import profile from './profile.jpeg';
 import { faAppStore, faGithub, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
-import { } from '@fortawesome/free-solid-svg-icons';
+import { faCss3 } from '@fortawesome/free-brands-svg-icons/faCss3';
+import { faDocker } from '@fortawesome/free-brands-svg-icons/faDocker';
+import { faGit } from '@fortawesome/free-brands-svg-icons/faGit';
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons/faHtml5';
+import { faJava } from '@fortawesome/free-brands-svg-icons/faJava';
+import { faJsSquare } from '@fortawesome/free-brands-svg-icons/faJsSquare';
+import { faLinux } from '@fortawesome/free-brands-svg-icons/faLinux';
+import { faMicrosoft } from '@fortawesome/free-brands-svg-icons/faMicrosoft';
+import { faPython } from '@fortawesome/free-brands-svg-icons/faPython';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faC } from '@fortawesome/free-solid-svg-icons/faC';
+import { faCloud } from '@fortawesome/free-solid-svg-icons/faCloud';
+import { faDatabase } from '@fortawesome/free-solid-svg-icons/faDatabase';
+import { faFile } from '@fortawesome/free-solid-svg-icons/faFile';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons/faGlobe';
+import { faLock } from '@fortawesome/free-solid-svg-icons/faLock';
+import { faR } from '@fortawesome/free-solid-svg-icons/faR';
 
 export const navigation = {
-  name: "Hashir",
+  name: "Markus",
   links: [
     {
       title: "About",
@@ -15,32 +31,24 @@ export const navigation = {
       link: "#projects",
     },
     {
-      title: "Contact",
-      link: "#contact",
-    },
-    {
       title: "Links",
       link: "/links",
     },
-    {
-      title: "Blog",
-      link: "https://medium.com/@hashirshoaeb",
-    }
   ],
 }
 export const intro = {
-  title: "Hey, I'm Hashir",
-  description: "A Computer Engineer creating mobile apps and static websites.",
+  title: "Hey, I'm Markus",
+  description: "A Data Scientist/Data Engineer working in insurance @arag.",
   image: profile.src,
   buttons: [
     {
       title: "Contact Me",
-      link: "#contact",
+      link: "mailto:freitagmarkus@outlook.de",
       isPrimary: true,
     },
     {
       title: "Resume",
-      link: "https://docs.google.com/document/d/13_PWdhThMr6roxb-UFiJj4YAFOj8e_bv3Vx9UHQdyBQ/edit?usp=sharing",
+      link: "",
       isPrimary: false,
     },
   ],
@@ -49,121 +57,152 @@ export const intro = {
 export const about = {
   title: "Who I am",
   description: [
-    "I graduated from National University of Sciences and Technology (NUST) in 2020 with a degree in Computer Engineering. I kick started my professional career as a mobile application developer working remotely for a UK based startup — Lessgo.",
-    "The tech industry is ever-evolving and I love being able to grow with it, while continually solidifying the fundamentals. I opensource my code from a place of empathy - for future developers, teammates, users, and with accessibility in mind. I also love joining communities, helping and mentoring new developers, and supporting organizations to promote diversity in tech. I’m sharing my programming journey on instagram, helping people who are just getting into the space of programming.",
-    "When I’m not programming, I focus on my hobbies which are: diary writing, doodling, meeting people and growing my network.",
+    "Welcome! I am a Data Scientist/Data Engineer in insurance. I love all things data plumbing, ML/DL, statistical and causal inference.",
+    "Previously, I was a Research Fellow at the Chair of Empirical Political Research and Policy Analysis at the Geschwister-Scholl-Institut of Political Science (LMU Munich) and a Data Analyst in pharma. I will continue some of my academic projects and teaching in my spare time.",
   ],
 }
 
 export const work = {
-  title: "What I do",
+  title: "Tech Stack",
   cards: [
     {
-      title: "Mobile App Development",
-      description: "I create pixel perfect iOS and Andriod apps using Flutter.",
-      icons: null,
+      title: "Expert",
+      description: "I code in Python, Pyspark, SQL, R, and occasionally Julia and deploy on Databricks and Azure Data Factory. On the stats side of things, I love causal deep learning and follow new trends in NLP (... yes, also LLMs).",
+      icons: [
+        {
+          icon: faPython,
+          link: "",
+        },
+        {
+          icon: faMicrosoft,
+          link: "",
+        },
+        {
+          icon: faCloud,
+          link: "",
+        },
+        {
+          icon: faDatabase,
+          link: "",
+        },
+        {
+          icon: faR,
+          link: "",
+        },
+        {
+          icon: faGit,
+          link: "",
+        },
+      ],
     },
     {
-      title: "Web Development",
-      description: "I create responsive static websites using Reactjs.",
-      icons: null,
+      title: "Advanced",
+      description: "Docker, Azure SQL, Azure Kubernetes Services, and Azure Cloud Sec/Architecture",
+      icons: [
+        {
+          icon: faDocker,
+          link: "",
+        },
+        {
+          icon: faCloud,
+          link: "",
+        },
+        {
+          icon: faLock,
+          link: "",
+        },
+        {
+          icon: faLinux,
+          link: "",
+        }
+      ],
+    },
+    {
+      title: "Basic",
+      description: "Arc‑Gis/Q‑Gis, JS/CSS/HTML, C+",
+      icons: [
+        {
+          icon: faC,
+          link: "",
+        },
+        {
+          icon: faJsSquare,
+          link: "",
+        },
+        {
+          icon: faHtml5,
+          link: "",
+        },
+        {
+          icon: faCss3,
+          link: "",
+        },
+      ],
     }
   ],
 }
 
 export const projects = {
-  title: "Projects",
+  title: "Research",
   cards: [
     {
-      title: "StarBook",
-      description: "A digital diary and mood tracking app that helps you in keeping track of your mood and productivity throughout the month/year.",
+      title: "Deontological and consequentialist preferences towards arms exports: A comparative conjoint experiment in France and Germany.",
+      description: "Rudolph, Lukas, Freitag, Markus und Thurner, Paul W.: EUROPEAN JOURNAL OF POLITICAL RESEARCH, 63: 705‑728 2024,",
       icons: [
         {
-          icon: faAppStore,
-          link: "https://apps.apple.com/us/app/starbook-journal-ai-diary/id1552418289",
-        },
-        {
-          icon: faGithub,
-          link: "https://github.com/hashirshoaeb/star_book",
+          icon: faFile,
+          link: "https://ejpr.onlinelibrary.wiley.com/doi/full/10.1111/1475-6765.12617",
         },
       ]
     },
     {
-      title: "QuranTalk",
-      description: "An emotional well being and mental health app. The app helps people to navigate their emotions in the light of the Quran.",
+      title: "Ordering Effects versus Cognitive Burden: How Should We Structure Attributes in Conjoint Experiments?",
+      description: "Rudolph, Lukas, Freitag, Markus und Thurner, Paul W.: PUBLIC OPINION QUARTERLY, 88: 991–1016.",
       icons: [
         {
-          icon: faAppStore,
-          link: "https://apps.apple.com/us/app/qurantalk/id1563425149",
-        },
-        {
-          icon: faGooglePlay,
-          link: "https://play.google.com/store/apps/details?id=com.ayahemotion.quran_talk",
+          icon: faFile,
+          link: "https://academic.oup.com/poq/article-abstract/88/3/991/7863420?redirectedFrom=fulltext",
         },
       ]
     },
     {
-      title: "Portfolio",
-      description: "A portfolio website template that helps you showcase your work, projects and skills as a software developer or freelancer.",
+      title: "Power Analysis for Conjoint Experiments",
+      description: "WORKING PAPER.",
       icons: [
         {
-          icon: faGithub,
-          link: "https://github.com/hashirshoaeb/portfolio",
+          icon: faGlobe,
+          link: "https://m-freitag.github.io/cjpowR_shiny/",
         },
       ]
     },
   ],
 }
 
-export const contact = {
-  title: "Get in touch",
-  description: "Coffee Chat! Please do not hesitate to schedule a meeting. Alternatively, feel free to reach out directly by email at hashirshoaeb@gmail.com.",
-  buttons: [
-    {
-      title: "Email Me",
-      link: "mailto:hashirshoaeb@gmail.com",
-      isPrimary: true,
-    },
-    {
-      title: "Schedule Meeting",
-      link: "https://topmate.io/hashirshoaeb",
-      isPrimary: false,
-    },
-  ]
-}
 
 // SEARCH ENGINE 
 export const SEO = {
   // 50 - 60 char  
-  title: "Hashir Shoaib | Computer Engineer | Flutter | Reactjs developer",
-  description: "I create mobile apps and static websites. I graduated from National University of Sciences and Technology (NUST) in 2020 with a degree in Computer Engineering.",
+  title: "Markus Freitag | Data Science | Data Engineering",
+  description: "A Data Scientist/Data Engineer working in insurance @arag.",
   image: profile.src,
 }
 
 export const links = {
   image: profile.src,
-  title: "@hashirshoaeb",
-  description: "Computer Engineer | Flutter | Reactjs Developer",
+  title: "Markus Freitag",
+  description: "Data Science | Data Engineering",
   cards: [
     {
-      title: "My website",
-      link: "https://hashirshoaeb.com/",
-    },
-    {
-      title: "QuranTalk App",
-      link: "https://www.qurantalk.app/",
-    },
-    {
-      title: "StarBook App",
-      link: "https://starbook.dev/",
-    },
-    {
-      title: "My GitHub",
-      link: "https://github.com/hashirshoaeb/",
+      title: "BlueSky",
+      link: "https://bsky.app/profile/markusfreitag.bsky.social",
     },
     {
       title: "My LinkedIn",
-      link: "https://www.linkedin.com/in/hashirshoaeb/",
+      link: "https://www.linkedin.com/in/markus-freitag/",
+    },
+    {
+      title: "Power for Conjoint Experiments",
+      link: "https://m-freitag.github.io/cjpowR_shiny/",
     },
   ]
 }
